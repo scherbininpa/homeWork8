@@ -12,4 +12,7 @@ Console.ReadLine();
 Console.WriteLine("Задание 2. Телефонная книга");
 Task2 task2 = new Task2();
 task2.FillDictionary();
+Console.WriteLine("Введите номер телефона для поиска:");
+task2.FindElement(Console.ReadLine());
+Console.ReadLine();
 #endregion
