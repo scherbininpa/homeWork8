@@ -8,10 +8,9 @@ namespace homeWork8
 {
     struct Task2
     {
-        private Dictionary<long,string> dictionary = new Dictionary<long,string>();
+        private Dictionary<string,string> dictionary = new Dictionary<string,string>();
         public Task2()
-        { 
-        
+        {   
         }
         public void FillDictionary()
         {
@@ -19,8 +18,8 @@ namespace homeWork8
             while (endData)
             {
                 Console.WriteLine("Введите номер телефона:");
-                long telepfone = long.Parse( Console.ReadLine());
-                if (telepfone == 0)
+                string telepfone =  Console.ReadLine();
+                if (telepfone == string.Empty)
                 {
                     endData = false;
                 }else
@@ -29,6 +28,24 @@ namespace homeWork8
                     string name = Console.ReadLine();
                     dictionary.Add(telepfone, name);
                 }
+            }
+            Console.WriteLine($"Заполнение словаря закончено. Всего записей - {dictionary.Count}");
+        }
+
+        /// <summary>
+        /// Поиск ФИО по номеру телеофна
+        /// </summary>
+        /// <param name="telepfone">Номер телефона</param>
+        public void FindElement(string telepfone)
+        {
+            string value = "";
+            if (dictionary.TryGetValue(telepfone, out value))
+            {
+                Console.WriteLine($"Под номером {telepfone} записан - {value}");
+            }
+            else
+            {
+                Console.WriteLine($"Номер - {telepfone} отсутствует в телефонной книге");
             }
         }
     }

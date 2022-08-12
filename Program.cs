@@ -8,3 +8,8 @@ task1.RemoveElementBetween(25, 50);
 task1.Print($"Набор элементов после удаления чисел между 25 и 50: ");
 Console.ReadLine();
 #endregion
+#region Задание 2. Телефонная книга
+Console.WriteLine("Задание 2. Телефонная книга");
+Task2 task2 = new Task2();
+task2.FillDictionary();
+#endregion
