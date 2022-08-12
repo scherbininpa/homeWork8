@@ -17,5 +17,14 @@ namespace homeWork8
                 list.Add(random.Next(100));
             }
         }
+
+        public void Print()
+        {
+            Console.WriteLine(list.Count);
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.Write((i == list.Count-1) ? $"{list[i]}" : $"{list[i]},");
+            }
+        }
     }
 }
