@@ -16,3 +16,7 @@ Console.WriteLine("Введите номер телефона для поиск�
 task2.FindElement(Console.ReadLine());
 Console.ReadLine();
 #endregion
+#region Задание 3. Проверка повторов
+Task3 task3 = new Task3();
+task3.AddValues();
+#endregion
