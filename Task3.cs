@@ -19,6 +19,7 @@ namespace homeWork8
             bool flagRepeat = true;
             while (flagRepeat)
             {
+                Console.WriteLine("Введите целое число");
                 try
                 {
                     int num = int.Parse(Console.ReadLine());
