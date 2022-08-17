@@ -26,6 +26,7 @@ Console.ReadLine();
 Console.WriteLine("Задание 3. Проверка повторов");
 Task4 task4 = new Task4();
 task4.SerializePerson("_PersonXml.xml");
+Console.WriteLine("XML-файл сформирован");
 
 Console.ReadLine();
 #endregion

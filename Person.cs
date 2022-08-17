@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace homeWork8
 {
-    struct Person
+    public class Person
     {
         public string FIO { get; set; }
         public string Street { get; set; }
@@ -23,6 +23,8 @@ namespace homeWork8
         /// <param name="ApartmentNumber">Номер квартиры</param>
         /// <param name="MobilePfone">Номер мобильного телефона</param>
         /// <param name="HomePfoneNumber">Номер домашнего телефона</param>
+        public Person()
+        { }
         public Person(string FIO,string Street,int HouseNumber,int ApartmentNumber,string MobilePfone,string HomePfoneNumber)
         {
             this.FIO = FIO;

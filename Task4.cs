@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace homeWork8
@@ -16,9 +18,22 @@ namespace homeWork8
         }
         public void SerializePerson(string Path)
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(Person));
-            Stream fStream = new FileStream(Path,FileMode.Create,FileAccess.Write);
-            xmlSerializer.Serialize(fStream, this.person);
+            Stream fStream = new FileStream(Path, FileMode.Create, FileAccess.Write);
+            XElement elementPerson = new XElement("Person");
+            XAttribute attrName = new XAttribute("name", this.person.FIO);
+            elementPerson.Add(attrName);
+
+            XElement elementAddress = new XElement("Address",
+                                                    new XElement("Street",this.person.Street),
+                                                    new XElement("HouseNumber",this.person.HouseNumber),
+                                                    new XElement("FlatNumber",this.person.ApartmentNumber));
+            XElement elementPhones = new XElement("Pfones",
+                                                    new XElement("MobilePfone",this.person.MobilePfone),
+                                                    new XElement("FlatPfone",this.person.HomePfoneNumber));
+            elementPerson.Add(elementAddress, elementPhones);
+            elementPerson.Save(fStream);
+
+            //xmlSerializer.Serialize(fStream, this.person);
             fStream.Close();
         }
         private void AddPerson()
