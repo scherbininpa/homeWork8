@@ -22,3 +22,10 @@ Task3 task3 = new Task3();
 task3.AddValues();
 Console.ReadLine();
 #endregion
+#region Задание 3. Проверка повторов
+Console.WriteLine("Задание 3. Проверка повторов");
+Task4 task4 = new Task4();
+task4.SerializePerson("_PersonXml.xml");
+
+Console.ReadLine();
+#endregion
